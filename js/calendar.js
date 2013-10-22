@@ -1,7 +1,7 @@
 var Calendar = (function(window, document, Helpers, HtmlCreator, undefined){
     var options = {
             currentDate: null,
-            months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+            months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 
             searchTimeout: 0,
             tdWidth: 0

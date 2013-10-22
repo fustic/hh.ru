@@ -1,7 +1,7 @@
 var CalendarEvent = function(title, description, date, participants, id){
     this.title = title || "";
     this.description = description || "";
-    this.date = date || getTodayDate();
+    this.date = date || Helpers.getTodayDate();
     this.participants = participants || "";
     this.id = id || Helpers.guid();
 };

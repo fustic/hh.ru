@@ -2,7 +2,7 @@ var HtmlCreator = (function(window, document, Helpers, undefined){
 
     var helpers = Object.create(Helpers),
         options = {
-            days: ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+            days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         }
         HtmlCreator = {
             createMonth: function(days, width){
@@ -65,12 +65,12 @@ var HtmlCreator = (function(window, document, Helpers, undefined){
                 div.appendChild(self.createCloseButtonPopup());
                 input.type = "text";
                 input.className = "form-control iEventCreateTitle";
-                input.setAttribute("placeholder", helpers.dateToString(helpers.getTodayDate()) + ", День рождения");
+                input.setAttribute("placeholder", helpers.dateToString(helpers.getTodayDate()) + ", Birth day");
                 input.setAttribute("autofocus",true);
                 div.appendChild(input);
                 button.type = "button";
                 button.className = "btn btn-default btn-xs iFastCreateEvent mb10";
-                button.innerText = "Создать";
+                button.innerText = "Create";
                 div.appendChild(button);
                 return div;
             },
@@ -100,7 +100,7 @@ var HtmlCreator = (function(window, document, Helpers, undefined){
                 title.type = "text";
                 title.value = event ? event.getTitle() : "";
                 title.className = "form-control iEventEditor";
-                title.setAttribute("placeholder", "Событие");
+                title.setAttribute("placeholder", "Event");
                 title.setAttribute("event-prop","title");
                 row.appendChild(title);
                 span.innerHTML = event ? event.getDateToString() : helpers.dateToString(helpers.getTodayDate());
@@ -109,21 +109,21 @@ var HtmlCreator = (function(window, document, Helpers, undefined){
                 participants.type = "text";
                 participants.value = event ? event.getParticipants() : "";
                 participants.className = "form-control iEventEditor";
-                participants.setAttribute("placeholder", "Имена участников");
+                participants.setAttribute("placeholder", "Participants");
                 participants.setAttribute("event-prop","participants");
                 row.appendChild(participants);
 
                 description.className = "form-control iEventEditor";
                 description.innerText = event ? event.getDescription() : "";
                 description.rows = 5;
-                description.setAttribute("placeholder", "Описание");
+                description.setAttribute("placeholder", "Description");
                 description.setAttribute("event-prop","description");
                 row.appendChild(description);
 
                 create.type = del.type = "button";
                 create.className = del.className = "btn btn-default btn-sm";
-                create.innerHTML = "Готово";
-                del.innerHTML = "Удалить";
+                create.innerHTML = "Done";
+                del.innerHTML = "Delete";
                 create.classList.add("iCreateEditEvent");
                 del.classList.add("iDeleteEvent");
                 row.appendChild(create);
